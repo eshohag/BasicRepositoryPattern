@@ -6,5 +6,6 @@ namespace BasicRepositoryPattern.BL
     public interface IStudentManager
     {
         List<Student> GetAll();
+        Student FindById();
     }
 }

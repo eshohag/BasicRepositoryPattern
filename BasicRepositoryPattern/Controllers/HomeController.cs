@@ -1,4 +1,4 @@
-﻿using BasicRepositoryPattern.Models;
+﻿using BasicRepositoryPattern.BL;
 using System.Web.Mvc;
 
 namespace BasicRepositoryPattern.Controllers
@@ -7,15 +7,10 @@ namespace BasicRepositoryPattern.Controllers
     {
         public ActionResult Index()
         {
-            var student = new Student();
-            student.FirstName = "Mr Jon";
-            student.LastName = "Doe";
-            student.DeptName = "CSE";
+            StudentManager studentManager = new StudentManager();
+            var students = studentManager.GetAll();
 
-            var fullName = student.GetFullName();
-
-
-            return View();
+            return View(students);
         }
 
         public ActionResult About()
