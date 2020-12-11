@@ -139,7 +139,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\ApplicationDbContext.cs" />
     <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\IStudentRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Repository\StudentRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />

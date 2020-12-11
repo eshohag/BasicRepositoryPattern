@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using BasicRepositoryPattern.Models;
+using System.Data.Entity;
 
 namespace BasicRepositoryPattern.Repository
 {
@@ -6,12 +7,12 @@ namespace BasicRepositoryPattern.Repository
     {
         public ApplicationDbContext() : base("DefaultConnection")
         {
-            //this.Configuration.LazyLoadingEnabled = true;
+            //this.Configuration.LazyLoadingEnabled = false;
             //this.Configuration.ProxyCreationEnabled = true;
         }
 
         #region COMMON TABLES
-
+        public DbSet<Student> Students { get; set; }
 
         #endregion
 

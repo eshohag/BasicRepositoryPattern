@@ -10,13 +10,6 @@ namespace BasicRepositoryPattern.Repository
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        #region Members
-
-        protected DbContext Context;
-        private bool disposed = false;
-
-        #endregion
-
         #region Constructor
         public Repository(DbContext context)
         {
@@ -27,13 +20,16 @@ namespace BasicRepositoryPattern.Repository
         public Repository() : this(new ApplicationDbContext()) { }
         #endregion
 
+
+        protected DbContext Context;
+        private bool disposed = false;
+
         #region PROPERTY
         // Entity corresponding Database Table
         protected DbSet<T> DbSet
         {
             get { return Context.Set<T>(); }
         }
-
         #endregion
 
         #region LINQ QUERY
